@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  tailscaled:
+    container_name: tailscaled
+    network_mode: "host"
+    env_file:
+      - .env
+    build:
+      context: ./scripts
+    privileged: true
+    volumes:
+      - tailscale_data:/var/lib/tailscale
+    restart: unless-stopped
+
+volumes:
+  tailscale_data:

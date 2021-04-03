@@ -1,0 +1,53 @@
+version: "3.8"
+services:
+  drone_server:
+    env_file:
+      - ./.env
+    image: drone/drone:1.10.1
+    container_name: drone_server
+    ports:
+      - 80:80
+      - 443:443
+      - 9000
+    volumes:
+      - drone_data_server:/data
+    restart: always
+    environment:
+      - DRONE_GITHUB_CLIENT_ID=${DRONE_GITHUB_CLIENT_ID}
+      - DRONE_GITHUB_CLIENT_SECRET=${DRONE_GITHUB_CLIENT_SECRET}
+      - DRONE_RPC_SECRET=${DRONE_RPC_SECRET}
+      - DRONE_SERVER_HOST=${DRONE_SERVER_HOST}
+      - DRONE_SERVER_PROTO=${DRONE_SERVER_PROTO}
+      - DRONE_TLS_AUTOCERT=${DRONE_TLS_AUTOCERT}
+      - DRONE_DATABASE_DRIVER=${DRONE_DATABASE_DRIVER}
+      - DRONE_DATABASE_DATASOURCE=${DRONE_DATABASE_DATASOURCE}
+    networks:
+      - drone_network
+
+  docker_runner:
+    image: drone/drone-runner-docker:1
+    container_name: docker_runner
+    env_file:
+      - ./.env
+    restart: always
+    depends_on:
+      - drone_server
+    ports:
+      - 3000:3000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./.env:/etc/ci/drone.conf
+    environment:
+      - DRONE_RPC_PROTO=${DRONE_RPC_PROTO}
+      - DRONE_RPC_HOST=${DRONE_RPC_HOST}
+      - DRONE_RUNNER_CAPACITY=${DRONE_RUNNER_CAPACITY}
+      - DRONE_RUNNER_NAME=${HOSTNAME_MACHINE_1}
+      - DRONE_RPC_SECRET=${DRONE_RPC_SECRET}
+    networks:
+      - drone_network
+
+volumes:
+  drone_data_server:
+
+networks:
+  drone_network:
