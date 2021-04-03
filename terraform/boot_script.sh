@@ -9,3 +9,7 @@ arkade get kubectl
 arkade get terraform
 arkade get helm
 arkade get docker-compose
+mv /root/.arkade/bin/docker-compose /usr/local/bin/
+mv /root/.arkade/bin/kubectl /usr/local/bin/
+mv /root/.arkade/bin/terraform /usr/local/bin/
+mv /root/.arkade/bin/helm /usr/local/bin/

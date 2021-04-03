@@ -9,7 +9,9 @@ services:
     ports:
       - "30110:30110"
       - "30120:30120"
-      - "81:80/tcp"
+      - "80:80"
+      - "30110:30110/udp"
+      - "30120:30120/udp"
     environment:
       - GET_HOSTS_FROM=dns
       - GID=100
