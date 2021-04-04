@@ -6,7 +6,15 @@ platform:
   arch: amd64
 
 steps:
-  - name: docker-compose
+  - name: pre-commit check
+    commands:
+      - cd /commit
+      - cd pre-commit-terraform
+      - git pull
+      - docker build -t pre-commit .
+      - docker run -v $(pwd):/lint -w /lint pre-commit run -a
+
+  - name: docker-compose test deploy
     commands:
       - git clone https://github.com/gruberdev/infrastructure-fivem.git && cd infrastructure-fivem
       - git pull --all
