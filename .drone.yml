@@ -6,9 +6,10 @@ platform:
   arch: amd64
 
 steps:
-  - name: dockerer-compose
+  - name: docker-compose
     commands:
-      - git pull
+      - git checkout drone-trigger-test
+      - git pull --all
       - docker-compose down
       - docker-compose up --build -d
     environment:
