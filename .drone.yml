@@ -11,7 +11,7 @@ steps:
       - sleep 10
       - apk update && apk add git py-pip python3-dev libffi-dev openssl-dev gcc libc-dev rust cargo make curl
       - pip install docker-compose
-      - git clone https://github.com/gruberdev/infrastructure-fivem.git
+      - git clone https://github.com/gruberdev/infrastructure-fivem.git && cd infrastructure-fivem
       - git checkout drone-trigger-test
       - docker-compose down
       - docker-compose up --build -d
