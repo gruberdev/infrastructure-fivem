@@ -20,6 +20,7 @@ services:
       - DRONE_SERVER_HOST=${DRONE_SERVER_HOST}
       - DRONE_SERVER_PROTO=${DRONE_SERVER_PROTO}
       - DRONE_TLS_AUTOCERT=${DRONE_TLS_AUTOCERT}
+      - DRONE_USER_CREATE=username:gruberdev-github,admin:true
     networks:
       - drone_network
 
@@ -41,7 +42,7 @@ services:
       - DRONE_RPC_PROTO=${DRONE_RPC_PROTO}
       - DRONE_RPC_HOST=${DRONE_RPC_HOST}
       - DRONE_RUNNER_CAPACITY=${DRONE_RUNNER_CAPACITY}
-      - DRONE_RUNNER_NAME=${HOSTNAME_MACHINE_1}
+      - DRONE_RUNNER_sNAME=${HOSTNAME_MACHINE_1}
       - DRONE_RPC_SECRET=${DRONE_RPC_SECRET}
     networks:
       - drone_network
