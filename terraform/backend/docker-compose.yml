@@ -67,9 +67,9 @@ services:
       - traefik.http.routers.${SERVICE_NAME_1}.tls=true
       - traefik.http.middlewares.serviceheaders.headers.accesscontrolalloworiginlist=*
       - traefik.http.routers.service.middlewares=viewsheaders
-      - traefik.port=30110/tcp
+      - traefik.port=30110
       - traefik.port=30110/udp
-      - traefik.port=30120/tcp
+      - traefik.port=30120
       - traefik.port=30120/udp
       - traefik.port=80
       - traefik.port=443
