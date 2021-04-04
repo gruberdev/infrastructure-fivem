@@ -15,6 +15,11 @@ steps:
       - git checkout drone-trigger-test
       - docker-compose down
       - docker-compose up --build -d
+    environment:
+      SERVER_KEY:
+        from_secret: SERVER_KEY
+      SVR_ADR:
+        from_secret: SVR_ADR
 
 services:
   - name: docker
@@ -25,5 +30,5 @@ services:
         path: /var/run
 
 volumes:
-  - name: dockersockad
+  - name: dockersock
     temp: {}
