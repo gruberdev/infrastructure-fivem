@@ -22,7 +22,7 @@
 cd infrastructure-fivem && docker-compose up -d
 ```
 
-If you want to quick connect to our test servers, we can be found at [roleplay.gruber.dev.br](https://roleplay.gruber.dev.br) (external link).f
+If you want to quick connect to our test servers, we can be found at [roleplay.gruber.dev.br](https://roleplay.gruber.dev.br) (external link).
 
 ### Built with:
 
