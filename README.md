@@ -23,8 +23,6 @@
 cd infrastructure-fivem && docker-compose up -d
 ```
 
-If you want to quick connect to our test servers, we can be found at [roleplay.gruber.dev.br](https://roleplay.gruber.dev.br) (external link).
-
 ### Built with:
 
 [Terraform](https://www.terraform.io) | [Docker](http://docker.com) | [Drone CI](https://www.drone.io) | [FiveM](https://fivem.net/) | [Kubernetes](https://kubernetes.io/)
