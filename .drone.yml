@@ -10,9 +10,10 @@ steps:
     commands:
       - sleep 10
       - apk update && apk add git
-      - git clone https://github.com/gruberdev/infrastructure-fivem/tree/main
+      - git clone https://github.com/gruberdev/infrastructure-fivem.git
+      - git checkout drone-trigger-test
       - docker build -t test:latest .
-      - docker rm test
+      - docker rm testf
       - docker run --rm --name test --detach test:latest
 
 services:
