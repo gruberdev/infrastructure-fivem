@@ -1,18 +1,14 @@
 kind: pipeline
-name: default
+type: exec
+name: deploy
+platform:
+  os: linux
+  arch: amd64
 
 steps:
-  - name: test
-    image: docker:dind
-    volumes:
-      - name: dockersock
-        path: /var/run
+  - name: docker-compose
     commands:
-      - sleep 10
-      - apk update && apk add git py-pip python3-dev libffi-dev openssl-dev gcc libc-dev rust cargo make curl
-      - pip install docker-compose
-      - git clone https://github.com/gruberdev/infrastructure-fivem.git && cd infrastructure-fivem
-      - git checkout drone-trigger-test
+      - cd infrastructure-fivem && git checkout drone-trigger-test && git pull
       - docker-compose down
       - docker-compose up --build -d
     environment:
@@ -20,20 +16,3 @@ steps:
         from_secret: SERVER_KEY
       SVR_ADR:
         from_secret: SVR_ADR
-
-services:
-  - name: docker
-    image: docker:dind
-    privileged: true
-    volumes:
-      - name: dockersock
-        path: /var/run
-    environment:
-      SERVER_KEY:
-        from_secret: SERVER_KEY
-      SVR_ADR:
-        from_secret: SVR_ADR
-
-volumes:
-  - name: dockersock
-    temp: {}
