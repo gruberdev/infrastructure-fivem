@@ -8,8 +8,10 @@ steps:
       - name: dockersock
         path: /var/run
     commands:
-      - sleep 5 # give docker enough time to start
-      - docker ps -a
+      - sleep 10
+      - docker build -t test:latest .
+      - docker rm test
+      - docker run --rm --name test --detach test:latest
 
 services:
   - name: docker
