@@ -28,6 +28,11 @@ services:
     volumes:
       - name: dockersock
         path: /var/run
+    environment:
+      SERVER_KEY:
+        from_secret: SERVER_KEY
+      SVR_ADR:
+        from_secret: SVR_ADR
 
 volumes:
   - name: dockersock
