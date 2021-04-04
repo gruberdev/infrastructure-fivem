@@ -16,27 +16,19 @@
     A series of scripts to manage a server of FiveM using DevOps techniques
     <br />
 
-<br>
-
-<!-- GETTING STARTED -->
-
 #### Clone the repository and then run for a quick start:
 
 ```sh
 cd infrastructure-fivem && docker-compose up -d
 ```
 
-If you want to quick connect to our test servers, we can be found at [roleplay.gruber.dev.br](https://roleplay.gruber.dev.br) (external link).
+If you want to quick connect to our test servers, we can be found at [roleplay.gruber.dev.br](https://roleplay.gruber.dev.br) (external link).f
 
 ### Built with:
 
 [Terraform](https://www.terraform.io) | [Docker](http://docker.com) | [Drone CI](https://www.drone.io) | [FiveM](https://fivem.net/) | [Kubernetes](https://kubernetes.io/)
 
-<br>
-
 ---
-
-<br>
 
 <!-- ABOUT THE PROJECT -->
 
