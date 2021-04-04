@@ -10,7 +10,7 @@ jobs:
       - name: Copy Repo Files
         uses: actions/checkout@master
       - name: Publish container image
-        uses: machine-learning-apps/gpr-docker-publish@v1.3
+        uses: machine-learning-apps/gpr-docker-publish@v1.4
         id: docker
         with:
           IMAGE_NAME: "basic-fivem-server"
