@@ -1,9 +1,24 @@
 kind: pipeline
-type: docker
 name: default
 
 steps:
-  - name: greeting
-    image: alpine
+  - name: test
+    image: docker:dind
+    volumes:
+      - name: dockersock
+        path: /var/run
     commands:
-      - echo hello
+      - sleep 5 # give docker enough time to start
+      - docker ps -a
+
+services:
+  - name: docker
+    image: docker:dind
+    privileged: true
+    volumes:
+      - name: dockersock
+        path: /var/run
+
+volumes:
+  - name: dockersock
+    temp: {}
