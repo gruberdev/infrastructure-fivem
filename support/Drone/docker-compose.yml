@@ -5,6 +5,7 @@ services:
       - ./.env
     image: drone/drone:1.10.1
     container_name: drone_server
+    privileged: true
     ports:
       - 80:80
       - 443:443
@@ -25,6 +26,7 @@ services:
   docker_runner:
     image: drone/drone-runner-docker:1
     container_name: docker_runner
+    privileged: true
     env_file:
       - ./.env
     restart: always
