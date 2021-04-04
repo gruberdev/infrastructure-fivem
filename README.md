@@ -2,6 +2,7 @@
 <table>
 <br />
 <p align="center">
+
   <img src="./assets/logo.png" alt="Logo" width="300" height="225">
 
   <div align="center">
