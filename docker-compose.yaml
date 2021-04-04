@@ -1,9 +1,8 @@
 version: "3"
 services:
   fivem:
-    env_file:
-      - .env
-    image: ich777/fivemserver
+    build:
+      context: ./
     volumes:
       - /mnt/user/appdata/fivem:/serverdata/serverfiles
     ports:

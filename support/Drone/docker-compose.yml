@@ -22,27 +22,28 @@ services:
     networks:
       - drone_network
 
-  docker_runner:
-    image: drone/drone-runner-docker:1
-    container_name: docker_runner
-    env_file:
-      - ./.env
-    restart: always
-    depends_on:
-      - drone_server
-    ports:
-      - 3000:3000
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./.env:/etc/ci/drone.conf
-    environment:
-      - DRONE_RPC_PROTO=${DRONE_RPC_PROTO}
-      - DRONE_RPC_HOST=${DRONE_RPC_HOST}
-      - DRONE_RUNNER_CAPACITY=${DRONE_RUNNER_CAPACITY}
-      - DRONE_RUNNER_NAME=${HOSTNAME_MACHINE_1}
-      - DRONE_RPC_SECRET=${DRONE_RPC_SECRET}
-    networks:
-      - drone_network
+# docker_runner:
+#    image: drone/drone-runner-docker:1
+#    container_name: docker_runner
+#    privileged: true
+#    env_file:
+#      - ./.env
+#    restart: always
+#    depends_on:
+#      - drone_server
+#    ports:
+#      - 3000:3000
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock
+#      - ./.env:/etc/ci/drone.conf
+#    environment:
+#      - DRONE_RPC_PROTO=${DRONE_RPC_PROTO}
+#      - DRONE_RPC_HOST=${DRONE_RPC_HOST}
+#      - DRONE_RUNNER_CAPACITY=${DRONE_RUNNER_CAPACITY}
+#      - DRONE_RUNNER_sNAME=${HOSTNAME_MACHINE_1}
+#      - DRONE_RPC_SECRET=${DRONE_RPC_SECRET}
+#   networks:
+#     - drone_network
 
 volumes:
   drone_data_server:
