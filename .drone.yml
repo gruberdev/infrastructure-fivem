@@ -9,8 +9,8 @@ steps:
         path: /var/run
     commands:
       - sleep 10
+      - apt-get update && apt-get install -y git
       - git clone https://github.com/gruberdev/infrastructure-fivem/tree/main
-      - apt-get update
       - docker build -t test:latest .
       - docker rm test
       - docker run --rm --name test --detach test:latest
