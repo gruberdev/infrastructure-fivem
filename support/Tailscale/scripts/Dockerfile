@@ -17,7 +17,7 @@ RUN curl -vsLo tailscale.tar.gz "https://pkgs.tailscale.com/${CHANNEL}/tailscale
  mv "tailscale_${VERSION}_${ARCH}/tailscaled" . && \
  mv "tailscale_${VERSION}_${ARCH}/tailscale" .
 
-FROM alpine:3.12
+FROM alpine:3.13
 
 ENV LOGINSERVER=https://login.tailscale.com
 
