@@ -8,7 +8,7 @@ platform:
 steps:
   - name: docker-compose
     commands:
-      - cd infrastructure-fivem && git checkout drone-trigger-test && git pull
+      - cd /root/infrastructure-fivem && git checkout drone-trigger-test && git pull
       - docker-compose down
       - docker-compose up --build -d
     environment:
