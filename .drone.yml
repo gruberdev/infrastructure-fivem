@@ -9,7 +9,7 @@ steps:
         path: /var/run
     commands:
       - sleep 10
-      - apt-get update && apt-get install -y git
+      - apk update && apk add git
       - git clone https://github.com/gruberdev/infrastructure-fivem/tree/main
       - docker build -t test:latest .
       - docker rm test
