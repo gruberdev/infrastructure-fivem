@@ -1,0 +1,20 @@
+kind: pipeline
+type: exec
+name: deploy
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: docker-compose
+    commands:
+      - git clone https://github.com/gruberdev/infrastructure-fivem.git && cd infrastructure-fivem
+      - git checkout drone-trigger-test
+      - git pull --all
+      - docker-compose down
+      - docker-compose up --build -d
+    environment:
+      SERVER_KEY:
+        from_secret: SERVER_KEY
+      SVR_ADR:
+        from_secret: SVR_ADR

@@ -1,15 +1,12 @@
 version: "3"
 services:
   fivem:
-    env_file:
-      - .env
     image: ich777/fivemserver
     volumes:
       - /mnt/user/appdata/fivem:/serverdata/serverfiles
     ports:
       - "30110:30110"
       - "30120:30120"
-      - "80:80"
       - "30110:30110/udp"
       - "30120:30120/udp"
     environment:
