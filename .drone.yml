@@ -6,9 +6,9 @@ platform:
   arch: amd64
 
 steps:
-  - name: docker-compose
+  - name: dockerer-compose
     commands:
-      - cd /root/infrastructure-fivem && git checkout drone-trigger-test && git pull
+      - git pull
       - docker-compose down
       - docker-compose up --build -d
     environment:
