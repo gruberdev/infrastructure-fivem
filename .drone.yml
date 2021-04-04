@@ -9,7 +9,6 @@ steps:
   - name: docker-compose
     commands:
       - git clone https://github.com/gruberdev/infrastructure-fivem.git && cd infrastructure-fivem
-      - git checkout drone-trigger-test
       - git pull --all
       - docker-compose down
       - docker-compose up --build -d
