@@ -1,0 +1,19 @@
+name: Publish Docker image to GitHub Package Registry
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copy Repo Files
+        uses: actions/checkout@master
+      - name: Publish container image
+        uses: machine-learning-apps/gpr-docker-publish@v1.3
+        id: docker
+        with:
+          IMAGE_NAME: "basic-fivem-server"
+          TAG: "v0.0.1"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
