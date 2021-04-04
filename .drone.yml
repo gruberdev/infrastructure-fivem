@@ -9,12 +9,13 @@ steps:
         path: /var/run
     commands:
       - sleep 10
-      - apk update && apk add git
+      - apk update && apk add git py-pip python3-dev libffi-dev openssl-dev gcc libc-dev rust cargo make curl
+      - curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      - chmod +x /usr/local/bin/docker-compose sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
       - git clone https://github.com/gruberdev/infrastructure-fivem.git
       - git checkout drone-trigger-test
-      - docker build -t test:latest .
-      - docker rm testf
-      - docker run --rm --name test --detach test:latest
+      - docker-compose down
+      - docker-compose up --build -d
 
 services:
   - name: docker
@@ -25,5 +26,5 @@ services:
         path: /var/run
 
 volumes:
-  - name: dockersock
+  - name: dockersockad
     temp: {}
