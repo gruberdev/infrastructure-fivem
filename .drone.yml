@@ -26,3 +26,10 @@ steps:
         from_secret: SERVER_KEY
       SVR_ADR:
         from_secret: SVR_ADR
+  - name: blast-radius terraform
+    commands:
+      - cd /infrastructure-five
+      - git pull --all
+      - cd terraform
+      - docker pull 28mm/blast-radius
+      - docker run --rm -it -p 5000:5000 -v $(pwd):/data:ro  --security-opt apparmor:unconfined --cap-add=SYS_ADMIN 28mm/blast-radius --serve stacks/beef
