@@ -26,7 +26,7 @@ docker run -p "30110:30110" -p " 30110:30110/udp" -p "30120:30120" -p "30120:301
 
 ### Built with:
 
-[Terraform](https://www.terraform.io) | [Docker](http://docker.com) | [Drone CI](https://www.drone.io) | [FiveM](https://fivem.net/) | [Kubernetes](https://kubernetes.io/)
+[Terraform](https://www.terraform.io) | [Docker](http://docker.com) | [Drone CI](https://www.drone.io) | [FiveM](https://fivem.net/) | [Kubernetes (Soon)](https://kubernetes.io/)
 
 ---
 
@@ -34,7 +34,8 @@ docker run -p "30110:30110" -p " 30110:30110/udp" -p "30120:30120" -p "30120:301
 
 ## About the project
 
-Due to the lack of scripts that make it easy to deploy new code to testing servers, I'd made this repository for my personal use and sharing the code as a way to give it back to the community, hoping it helps someone as it helped me. Any questions or suggestions please open an issue and I'll answer when I am able to, as I made this on my free time for hobby.
+As I researched repositories for fivem, I noticed there was a lack of scripts that made it easier to test and assess quality of the resources deployed using CI/CD. Modern DevOps tools integrate with servers and existing cloud providers to allow developers to avoid surprises when deploying new code and resources to the server My goal is to share these tools with the rest of the community, as I built them for my personal use, hoping it helps other fellow members as much it helped me to avoid operations headache and focus on feature development.
+Feel free to open issues with questions or suggestions.
 
 <!-- CONTRIBUTING -->
 
