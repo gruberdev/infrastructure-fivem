@@ -12,7 +12,7 @@ steps:
       - cd pre-commit-terraform
       - git pull
       - docker build -t pre-commit .
-      - cd /infrastructure-fivem && git pull --all && cd terraform
+      - cd /infrastructure-fivem && git pull --all
       - docker run -v $(pwd):/lint -w /lint pre-commit run -a
 
   - name: docker-compose test deploy
