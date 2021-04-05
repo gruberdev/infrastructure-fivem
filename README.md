@@ -34,7 +34,12 @@ docker run -p "30110:30110" -p " 30110:30110/udp" -p "30120:30120" -p "30120:301
 
 ## About the project
 
-As I researched repositories for fivem, I noticed there was a lack of scripts that made it easier to test and assess quality of the resources deployed using CI/CD. Modern DevOps tools integrate with servers and existing cloud providers to allow developers to avoid surprises when deploying new code and resources to the server My goal is to share these tools with the rest of the community, as I built them for my personal use, hoping it helps other fellow members as much it helped me to avoid operations headache and focus on feature development.
+As I researched repositories for fivem, I noticed there was a lack of scripts that made it easier to test and assess quality of the resources deployed using CI/CD. Modern DevOps tools integrate with servers and existing cloud providers to allow developers to avoid surprises when deploying new code and resources to the server.
+
+My goal is to share these tools with the rest of the community, as I built them for my personal use, hoping it helps other fellow members as much it helped me to avoid operations headache and focus on feature development.
+
+There'll be a more in-depth documentation deployed through this repository as part of the pipeline soon.
+
 Feel free to open issues with questions or suggestions.
 
 <!-- CONTRIBUTING -->
