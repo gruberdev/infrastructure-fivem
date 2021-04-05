@@ -34,4 +34,4 @@ steps:
       - docker stop blast_radius || true
       - docker rm blast_radius || true
       - docker pull 28mm/blast-radius
-      - docker run --rm --detach -p 5000:5000 -v $(pwd):/data:ro  --name blast_radius --security-opt apparmor:unconfined --cap-add=SYS_ADMIN 28mm/blast-radius --serve .
+      - docker run --detach -p 5000:5000 -v $(pwd):/data:ro  --name blast_radius --security-opt apparmor:unconfined --cap-add=SYS_ADMIN 28mm/blast-radius --serve .
