@@ -7,13 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Copy Repo Files
-        uses: actions/checkout@master
+      - uses: actions/checkout@v2
+        name: Check out code
       - name: Publish container image
-        uses: machine-learning-apps/gpr-docker-publish@v1.3
-        id: docker
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          IMAGE_NAME: "basic-fivem-server"
-          TAG: "v0.0.1"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          image: basic-fivem-server:latest
+          registry: ghcr.io
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_TOKEN }}
