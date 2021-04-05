@@ -14,5 +14,6 @@ jobs:
         with:
           image: basic-fivem-server
           registry: ghcr.io
+          tags: latest
           username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_TOKEN }}
