@@ -56,7 +56,7 @@ Feel free to open issues with questions or suggestions.
 
 ## License
 
-Distributed under the GNU License. See [LICENSE](https://raw.githubusercontent.com/gruberdev/infrastructure-fivem/main/LICENSE) for more information.
+Distributed under the GNU License. See [LICENSE](https://raw.githubusercontent.com/gruberdev/infrastructure-fivem/license_update/LICENSE) for more information.
 
 <!-- BADGE IMAGES URLs -->
 
