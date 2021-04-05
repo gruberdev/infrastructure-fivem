@@ -20,7 +20,8 @@
 #### Clone the repository and then run for a quick start:
 
 ```sh
-cd infrastructure-fivem && docker-compose up -d
+export SERVER_KEY=your_server_key
+docker run -p "30110:30110" -p " 30110:30110/udp" -p "30120:30120" -p "30120:30120/udp" -e SERVER_KEY=$SERVER_KEY ghcr.io/gruberdev/basic-fivem-server
 ```
 
 ### Built with:
