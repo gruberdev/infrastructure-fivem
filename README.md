@@ -17,7 +17,7 @@
     A series of scripts to manage a server of FiveM using DevOps techniques
     <br />
 
-#### Clone the repository and then run for a quick start:
+#### Clone the repository and then run for a quick start (You'll need to create a new key, **even if it is on the same IP address**):
 
 ```sh
 export SERVER_KEY=your_server_key
@@ -32,7 +32,7 @@ docker run -p "30110:30110" -p " 30110:30110/udp" -p "30120:30120" -p "30120:301
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
+## About the project
 
 Due to the lack of scripts that make it easy to deploy new code to testing servers, I'd made this repository for my personal use and sharing the code as a way to give it back to the community, hoping it helps someone as it helped me. Any questions or suggestions please open an issue and I'll answer when I am able to, as I made this on my free time for hobby.
 
@@ -40,13 +40,11 @@ Due to the lack of scripts that make it easy to deploy new code to testing serve
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Contributions are openly welcome.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/YourFeature`)
-3. Commit your Changes (`git commit -m 'Add some YourFeature'`)
-4. Push to the Branch (`git push origin feature/YourFeature`)
-5. Open a Pull Request
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -m 'Add some YourFeature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a pull request
 
 <!-- LICENSE -->
 
