@@ -38,7 +38,7 @@ As I researched repositories for fivem, I noticed there was a lack of scripts th
 
 My goal is to share these tools with the rest of the community, as I built them for my personal use, hoping it helps other fellow members as much it helped me to avoid operations headache and focus on feature development.
 
-There'll be a more in-depth documentation deployed through this repository as part of the pipeline soon.
+There'll be a more in-depth documentation deployesd through this repository as part of the pipeline soon.
 
 Feel free to open issues with questions or suggestions.
 
@@ -56,7 +56,7 @@ Feel free to open issues with questions or suggestions.
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://raw.githubusercontent.com/gruberdev/infrastructure-fivem/license_update/LICENSE) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/gruberdev/infrastructure-fivem/blob/main/LICENSE) for more information.
 
 <!-- BADGE IMAGES URLs -->
 
