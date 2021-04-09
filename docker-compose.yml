@@ -1,10 +1,10 @@
-version: "3"
+version: "3.8"
 services:
   fivem:
     build:
       context: ./
     volumes:
-      - /mnt/user/appdata/fivem:/serverdata/serverfiles
+      - fivem_data:/serverdata/serverfiles
     ports:
       - "30110:30110"
       - "30120:30120"
@@ -18,4 +18,6 @@ services:
       - SERVER_KEY=${SERVER_KEY}
       - GAME_CONFIG=server.cfg
     labels:
-      kompose.service.type: LoadBalancer
+      kompose.service.type: NodePort
+volumes:
+  fivem_data:

@@ -12,21 +12,22 @@
 <a href='https://documentation.roleplay.gruber.dev.br' target='_blank'>![documentation-badge]</a>
 
 </div>
-
+sss
   <p align="center">
     A series of scripts to manage a server of FiveM using DevOps techniques
     <br />
 
-#### Clone the repository and then run for a quick start (You'll need to create a new key, **even if it is on the same IP address**):
+#### Clone the repository and then run for a quick start (You'll need to create a new key, **even if it is on the same IP address**)
 
 ```sh
 export SERVER_KEY=your_server_key
 docker run -p "30110:30110" -p " 30110:30110/udp" -p "30120:30120" -p "30120:30120/udp" -e SERVER_KEY=$SERVER_KEY ghcr.io/gruberdev/basic-fivem-server
 ```
 
-### Built with:
+### Built with
 
 [Terraform](https://www.terraform.io) | [Docker](http://docker.com) | [Drone CI](https://www.drone.io) | [FiveM](https://fivem.net/) | [Kubernetes (Soon)](https://kubernetes.io/)
+sss
 
 ---
 
