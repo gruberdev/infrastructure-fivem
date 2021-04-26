@@ -35,7 +35,6 @@ docker-compose up --build -d
 ### Built with
 
 [Terraform](https://www.terraform.io) | [Docker](http://docker.com) | [Drone CI](https://www.drone.io) | [FiveM](https://fivem.net/) | [Kubernetes (Soon)](https://kubernetes.io/)
-sss
 
 ---
 
