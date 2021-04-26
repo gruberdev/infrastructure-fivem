@@ -6,23 +6,37 @@ platform:
   arch: amd64
 
 steps:
-  - name: pre-commit check
+  - name: terraform deploy
     commands:
-      - cd /commit
-      - cd pre-commit-terraform
-      - git pull
-      - docker build -t pre-commit .
-      - cd /infrastructure-fivem && git pull --all
-      - docker run -v $(pwd):/lint -w /lint pre-commit run -a
-
-  - name: docker-compose test deploy
-    commands:
-      - cd /infrastructure-fivem
+      - cd /root/terraform/infrastructure-five/terraform
+      - git checkout new-resources
+      - terraform destroy -auto-approve || true
       - git pull --all
-      - docker-compose down
-      - docker-compose up --build -d
+      - terraform apply -auto-approve
     environment:
-      SERVER_KEY:
-        from_secret: SERVER_KEY
-      SVR_ADR:
-        from_secret: SVR_ADR
+      TF_VAR_zone_id:
+        from_secret: cloudflare_zone_id
+      TF_VAR_cloudflare_email:
+        from_secret: cloudflare_email
+      TF_VAR_cloudflare_api_key:
+        from_secret: cloudflare_api_key
+      TF_VAR_vultr_token:
+        from_secret: vultr_api_token
+      TF_VAR_os:
+        from_secret: vultr_os
+      TF_VAR_plan:
+        from_secret: vultr_plan
+      TF_VAR_label:
+        from_secret: vultr_label
+      TF_VAR_region:
+        from_secret: vultr_region
+      TF_VAR_hostname:
+        from_secret: vultr_hostname
+      TF_VAR_domain_type:
+        from_secret: cf_domain_type
+      TF_VAR_ttl:
+        from_secret: cloudflare_ttl
+      TF_VAR_tailscale_local:
+        from_secret: tailscale_ip
+      TF_VAR_tailscale_token:
+        from_secret: tailscale_token
