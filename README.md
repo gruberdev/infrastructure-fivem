@@ -12,24 +12,29 @@
 <a href='https://documentation.roleplay.gruber.dev.br' target='_blank'>![documentation-badge]</a>
 
 </div>
-
   <p align="center">
     A series of scripts to manage a server of FiveM using DevOps techniques
     <br />
+
+#### Try our server out, enter FiveM and press F8 and then type:
+
+```sh
+connect fivem.gruber.dev.br
+```
 
 #### Clone the repository and then run for a quick start:
 
 ```sh
 git clone https://github.com/gruberdev/infrastructure-fivem.git
 cd infrastructure-fivem
-export SERVER_KEY=your_server_key
+# Remember to insert your server token into .env.example
+cp .env.example .env
 docker-compose up --build -d
 ```
 
 ### Built with
 
 [Terraform](https://www.terraform.io) | [Docker](http://docker.com) | [Drone CI](https://www.drone.io) | [FiveM](https://fivem.net/) | [Kubernetes (Soon)](https://kubernetes.io/)
-sss
 
 ---
 
