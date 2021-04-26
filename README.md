@@ -17,12 +17,19 @@ sss
     A series of scripts to manage a server of FiveM using DevOps techniques
     <br />
 
+#### Try our server out, enter FiveM and press F8 and then type:
+
+```sh
+connect fivem.gruber.dev.br
+```
+
 #### Clone the repository and then run for a quick start:
 
 ```sh
 git clone https://github.com/gruberdev/infrastructure-fivem.git
 cd infrastructure-fivem
-export SERVER_KEY=your_server_key
+# Remember to insert your server token into .env.example
+cp .env.example .env
 docker-compose up --build -d
 ```
 
