@@ -23,3 +23,4 @@ terraform/*.backup
 .gitlab-ci-local
 terraform/.env
 terraform/.terraform.lock.hcl
+support/stack/

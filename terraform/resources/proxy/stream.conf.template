@@ -1,0 +1,8 @@
+stream {
+	limit_conn_zone "udp-stream" zone=servers:10m;
+	server {
+		limit_conn servers 100;
+		listen 30120 udp;
+		proxy_pass ${REMOTE};
+	}
+}

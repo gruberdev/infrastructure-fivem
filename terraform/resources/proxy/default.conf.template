@@ -1,0 +1,61 @@
+proxy_cache_path /srv/cache levels=1:2 keys_zone=assets:48m max_size=20g;
+log_format asset '$remote_addr - [$time_local] "$request" $status $body_bytes_sent $upstream_cache_status';
+
+server {
+	listen 80;
+ listen 30120;
+	resolver 8.8.8.8;
+
+	location / {
+		deny all;
+		proxy_pass http://${REMOTE};
+		proxy_http_version 1.1;
+		proxy_buffering off;
+		proxy_set_header X-Real-IP $remote_addr;
+	}
+
+	# Pass to client endpoint, this is the main connection endpoint where all the magic happens
+	location /client {
+		proxy_pass http://${REMOTE};
+		proxy_buffering off;
+		proxy_http_version 1.1;
+		proxy_set_header X-Real-IP $remote_addr;
+		
+		lua_need_request_body on;
+		header_filter_by_lua_block { ngx.header.content_length = nil }
+		# Override the getEndpoints call to return the correct endpoint (this can also be done with the sv_endpoints convar)
+		body_filter_by_lua_block {
+			local data = ngx.req.get_body_data()
+
+			if data:match('method=getEndpoints') and #ngx.arg[1] > 0 then
+				ngx.arg[1] = '["${LOCAL_ENDPOINT_IP}:${LOCAL_ENDPOINT_PORT}"]'
+			end
+		}
+	}
+
+	# Cache the info.json for 10 minutes, should be sufficient for most use cases and saves marginally on performance
+	location /info.json {
+		proxy_pass http://${REMOTE};
+		proxy_http_version 1.1;
+		proxy_cache assets;
+		proxy_cache_valid 10m;
+		proxy_cache_key $request_uri$is_args$args;
+		proxy_set_header X-Real-IP $remote_addr;
+		add_header X-Cache $upstream_cache_status;
+	}
+
+	location /files/ {
+		# If you have a seperate file proxy uncomment this so files can't be requested here
+		#deny all;
+		access_log /dev/stdout asset;
+		add_header X-Cache-Status $upstream_cache_status;
+		proxy_cache_lock on;
+		proxy_pass http://${REMOTE}$request_uri$is_args$args;
+		proxy_cache assets;
+		proxy_cache_valid 1y;
+		proxy_cache_key $request_uri$is_args$args;
+		proxy_http_version 1.1;
+		proxy_set_header X-Real-IP $remote_addr;
+	}
+}
+

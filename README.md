@@ -12,21 +12,24 @@
 <a href='https://documentation.roleplay.gruber.dev.br' target='_blank'>![documentation-badge]</a>
 
 </div>
-
+sss
   <p align="center">
     A series of scripts to manage a server of FiveM using DevOps techniques
     <br />
 
-#### Clone the repository and then run for a quick start (You'll need to create a new key, **even if it is on the same IP address**):
+#### Clone the repository and then run for a quick start:
 
 ```sh
+git clone https://github.com/gruberdev/infrastructure-fivem.git
+cd infrastructure-fivem
 export SERVER_KEY=your_server_key
-docker run -p "30110:30110" -p " 30110:30110/udp" -p "30120:30120" -p "30120:30120/udp" -e SERVER_KEY=$SERVER_KEY ghcr.io/gruberdev/basic-fivem-server
+docker-compose up --build -d
 ```
 
-### Built with:
+### Built with
 
 [Terraform](https://www.terraform.io) | [Docker](http://docker.com) | [Drone CI](https://www.drone.io) | [FiveM](https://fivem.net/) | [Kubernetes (Soon)](https://kubernetes.io/)
+sss
 
 ---
 
@@ -38,7 +41,7 @@ As I researched repositories for fivem, I noticed there was a lack of scripts th
 
 My goal is to share these tools with the rest of the community, as I built them for my personal use, hoping it helps other fellow members as much it helped me to avoid operations headache and focus on feature development.
 
-There'll be a more in-depth documentation deployed through this repository as part of the pipeline soon.
+There'll be a more in-depth documentation deployesd through this repository as part of the pipeline soon.
 
 Feel free to open issues with questions or suggestions.
 
@@ -56,7 +59,7 @@ Feel free to open issues with questions or suggestions.
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://raw.githubusercontent.com/gruberdev/infrastructure-fivem/license_update/LICENSE) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/gruberdev/infrastructure-fivem/blob/main/LICENSE) for more information.
 
 <!-- BADGE IMAGES URLs -->
 
