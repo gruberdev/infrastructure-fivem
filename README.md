@@ -12,7 +12,7 @@
 <a href='https://documentation.roleplay.gruber.dev.br' target='_blank'>![documentation-badge]</a>
 
 </div>
-sss
+
   <p align="center">
     A series of scripts to manage a server of FiveM using DevOps techniques
     <br />
