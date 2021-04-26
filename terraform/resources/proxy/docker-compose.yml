@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  proxy:
+    build:
+      context: .
+    network_mode: host
+    environment:
+      - REMOTE=${REMOTE}
+      - LOCAL_ENDPOINT_IP=${LOCAL_ENDPOINT_IP}
+      - LOCAL_ENDPOINT_PORT=30120

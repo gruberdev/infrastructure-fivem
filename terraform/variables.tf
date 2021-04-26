@@ -54,3 +54,23 @@ variable "ttl" {
   type        = string
 }
 
+variable "subnet" {
+  description = "Vultr Private Network subnet for instances. Cannot overlap Cluster Service IP's(10.96.0.0/12) or Pod Network IPs(10.244.0.0/16)."
+  type        = string
+  default     = "10.240.0.0"
+}
+variable "subnet_mask" {
+  description = "subnet mask for Vultr Network Instance"
+  type        = number
+  default     = 24
+}
+
+variable "tailscale_local" {
+  description = "Your local tailscale local IPv4 for bridging"
+  type        = string
+}
+
+variable "tailscale_token" {
+  description = "Your Tailscale reusable API Token"
+  type        = string
+}

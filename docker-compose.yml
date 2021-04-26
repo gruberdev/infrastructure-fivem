@@ -3,6 +3,8 @@ services:
   fivem:
     build:
       context: ./
+    env_file:
+      - ./.env
     volumes:
       - fivem_data:/serverdata/serverfiles
     ports:
@@ -11,13 +13,8 @@ services:
       - "30110:30110/udp"
       - "30120:30120/udp"
     environment:
-      - GET_HOSTS_FROM=dns
       - GID=100
       - UID=99
-      - SRV_ADR=${SVR_ADR}
-      - SERVER_KEY=${SERVER_KEY}
       - GAME_CONFIG=server.cfg
-    labels:
-      kompose.service.type: NodePort
 volumes:
   fivem_data:
