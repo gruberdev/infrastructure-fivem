@@ -10,6 +10,7 @@ steps:
     commands:
       - cd /root/terraform/infrastructure-fivem/terraform
       - git checkout new-resources
+      - terraform init
       - terraform destroy -auto-approve || true
       - git pull --all
       - terraform apply -auto-approve
