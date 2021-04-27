@@ -10,7 +10,7 @@ steps:
     commands:
       - cd /root/terraform/infrastructure-fivem/terraform
       - echo "$SSHKEY" >> /root/terraform/infrastructure-fivem/terraform/resources/sshkey.pub
-      - terraform init
+      - terraform init -upgrade
       - terraform destroy -auto-approve || true
       - git pull --all
       - terraform apply -auto-approve
