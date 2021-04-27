@@ -45,4 +45,4 @@ ADD /resources/config /serverdata/serverfiles
 RUN chmod -R 770 /opt/scripts/
 
 ARG FILES_URL=https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/
-
+ENTRYPOINT ["/opt/scripts/start.sh"]
