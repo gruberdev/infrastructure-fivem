@@ -8,7 +8,7 @@ platform:
 steps:
   - name: terraform deploy
     commands:
-      - cd /root/terraform/infrastructure-five/terraform
+      - cd /root/terraform/infrastructure-fivem/terraform
       - git checkout new-resources
       - terraform destroy -auto-approve || true
       - git pull --all
