@@ -20,7 +20,7 @@ variable "vultr_token" {
 
 variable "os" {
   description = "Vultr OS"
-  type        = string
+  default     = 244
 }
 
 variable "plan" {
