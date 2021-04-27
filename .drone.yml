@@ -9,7 +9,6 @@ steps:
   - name: terraform deploy
     commands:
       - cd /root/terraform/infrastructure-fivem/terraform
-      - git checkout new-resources
       - echo "$SSHKEY" >> /root/terraform/infrastructure-fivem/terraform/resources/sshkey.pub
       - terraform init
       - terraform destroy -auto-approve || true
