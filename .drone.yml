@@ -13,6 +13,7 @@ steps:
       - terraform init -upgrade
       - terraform destroy -auto-approve || true
       - git pull --all
+      - terraform init -upgrade || true
       - terraform apply -auto-approve
     environment:
       SSHKEY:
