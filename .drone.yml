@@ -41,3 +41,7 @@ steps:
         from_secret: tailscale_ip
       TF_VAR_tailscale_token:
         from_secret: tailscale_token
+trigger:
+  branch:
+    - master
+    - main
