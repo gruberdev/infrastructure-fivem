@@ -10,11 +10,14 @@ steps:
     commands:
       - cd /root/terraform/infrastructure-fivem/terraform
       - git checkout new-resources
+      - echo "$SSHKEY" >> /root/terraform/infrastructure-fivem/terraform/resources/sshkey.pub
       - terraform init
       - terraform destroy -auto-approve || true
       - git pull --all
       - terraform apply -auto-approve
     environment:
+      SSHKEY:
+        from_secret: sshkey
       TF_VAR_zone_id:
         from_secret: cloudflare_zone_id
       TF_VAR_cloudflare_email:
