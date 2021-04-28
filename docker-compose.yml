@@ -12,9 +12,28 @@ services:
       - "30120:30120"
       - "30110:30110/udp"
       - "30120:30120/udp"
+    networks:
+      - database
     environment:
       - GID=100
       - UID=99
       - GAME_CONFIG=server.cfg
+
+  db:
+    container_name: db
+    image: mysql
+    ports:
+      - 3306:3306
+    networks:
+      - database
+    command: --default-authentication-plugin=mysql_native_password
+    env_file:
+      - ./.env
+    volumes:
+      - "mysql_master_data:/var/lib/mysql"
+
 volumes:
   fivem_data:
+  mysql_master_data:
+networks:
+  database:
