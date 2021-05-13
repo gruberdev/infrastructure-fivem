@@ -3,7 +3,7 @@ services:
   drone_server:
     env_file:
       - ./.env
-    image: drone/drone:1.10.1
+    image: drone/drone:2.0.0
     container_name: drone_server
     privileged: true
     ports:
