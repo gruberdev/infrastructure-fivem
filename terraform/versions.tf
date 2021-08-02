@@ -7,7 +7,7 @@ terraform {
     }
     vultr = {
       source  = "vultr/vultr"
-      version = "2.3.2"
+      version = "2.4.0"
     }
     docker = {
       source  = "kreuzwerker/docker"
