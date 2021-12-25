@@ -27,8 +27,8 @@ connect fivem.gruber.dev.br
 ```sh
 git clone https://github.com/gruberdev/infrastructure-fivem.git
 cd infrastructure-fivem
-# Remember to insert your server token into .env.example
-cp .env.example .env
+# Remember to insert your server token into .example.env
+cp .example.env .env
 docker-compose up --build -d
 ```
 
