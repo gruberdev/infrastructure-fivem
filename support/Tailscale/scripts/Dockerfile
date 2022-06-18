@@ -1,4 +1,4 @@
-FROM alpine:3.14 AS builder
+FROM alpine:3.16 AS builder
 
 ARG TAILSCALE_CHANNEL=${TAILSCALE_CHANNEL}
 ARG TAILSCALE_VERSION=${TAILSCALE_VERSION}
@@ -17,7 +17,7 @@ RUN curl -vsLo tailscale.tar.gz "https://pkgs.tailscale.com/${CHANNEL}/tailscale
  mv "tailscale_${VERSION}_${ARCH}/tailscaled" . && \
  mv "tailscale_${VERSION}_${ARCH}/tailscale" .
 
-FROM alpine:3.14
+FROM alpine:3.16
 
 ENV LOGINSERVER=https://login.tailscale.com
 
