@@ -1,3 +1,8 @@
+# This project has been archived and will receive no further updates.
+> The main reason for that, and why I chose to focus on other games instead of FiveM, is mainly related to their [Terms of Services](https://runtime.fivem.net/fivem-service-agreement-4.pdf).
+
+> They are known for banning other hosting service providers and trying to enforce an IP policy/copyright for monetary purposes. As a modding community, I think this sets a bad example and to continue working on open-source projects that might benefit them is not in the community's best interest (nor mine). I won't be updating this project.
+
 <!-- PROJECT LOGO -->
 <table>
 <br />
@@ -7,20 +12,12 @@
 
   <div align="center">
 
-<a href='https://drone.gruber.dev.br/gruberdev/infrastructure-fivem' target='_blank'>![pipeline-badge]</a>
-<a href='https://www.codefactor.io/repository/github/gruberdev/infrastructure-fivem' target='_blank'>![quality-badge]</a>
-<a href='https://documentation.roleplay.gruber.dev.br' target='_blank'>![documentation-badge]</a>
-
 </div>
   <p align="center">
     A series of scripts to manage a server of FiveM using DevOps techniques
     <br />
 
 #### Try our server out, enter FiveM and press F8 and then type:
-
-```sh
-connect fivem.gruber.dev.br
-```
 
 #### Clone the repository and then run for a quick start:
 
@@ -46,19 +43,6 @@ As I researched repositories for fivem, I noticed there was a lack of scripts th
 
 My goal is to share these tools with the rest of the community, as I built them for my personal use, hoping it helps other fellow members as much it helped me to avoid operations headache and focus on feature development.
 
-There'll be a more in-depth documentation deployesd through this repository as part of the pipeline soon.
-
-Feel free to open issues with questions or suggestions.
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/YourFeature`)
-3. Commit your changes (`git commit -m 'Add some YourFeature'`)
-4. Push to the branch (`git push origin feature/YourFeature`)
-5. Open a pull request
 
 <!-- LICENSE -->
 
